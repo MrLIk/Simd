@@ -238,3 +238,9 @@ elseif((CMAKE_SYSTEM_PROCESSOR STREQUAL "mips"))
 else()
     message(FATAL_ERROR "Unknown value of CMAKE_SYSTEM_PROCESSOR!")
 endif()
+
+file(GLOB INCLUDE_FILES "../../src/Simd/*.h" "../../src/Simd/*.hpp")
+file(GLOB LIB_FILE "${CMAKE_CURRENT_BINARY_DIR}/libSimd.*")
+
+install(FILES ${INCLUDE_FILES} DESTINATION ./include/Simd/)
+install(FILES ${LIB_FILE} DESTINATION ./lib/)
